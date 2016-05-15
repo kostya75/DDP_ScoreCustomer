@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\n###PREDICTION FUNCTION\n#function to score a new customer\n\n#input tests\n#categories\n#Customer pleaser, efficient operator, growth oriented\n\n#responses\n#1 It's important to me how I'm perceived in the community\n#2 I'm always trying to understand my customers' needs\n#3 Making sure that the store is always properly stocked is important\n#4 Getting a deal from a supplier is how they get my business\n#5 I'm always looking for ways to attract new customers\n\nscore<-function(response) {\n    \n    #cluster centers. The estimates below could be an output of k-means procedure\n    cluster_name<-c(\"Customer Pleaser\", \"Efficient Operator\", \"Growth First\")\n    cluster_image<-list(\"CP.png\",\"EO.png\",\"GF.png\")\n    cluster_coord1<-c(8,5,1)\n    cluster_coord2<-c(1,3,8)\n    \n    #linear combinations of responses used to score new observations. The estimates below\n    #could be an output of linear discriminant analysis\n    dim1<-c(.8,.7,.3,.1,.3)\n    dim2<-c(.3,.1,.3,.7,.8)\n    \n    #estimate coordinates in 2D from lda for a new observation\n    coord1<-sum(response*dim1)\n    coord2<-sum(response*dim2)\n    \n    min_distance<-1000\n    index<-1\n    \n    #find the distanse to the nearest cluster center for a new response and output the \"label\"\n    for (i in 1:3) {\n        \n        distance<-sqrt((cluster_coord1[i]-coord1)^2+(cluster_coord2[i]-coord2)^2)\n        if(min_distance>=distance) {\n            min_distance=distance \n            index=i\n        }\n    }\n    list(cluster_name[index],cluster_image[index])\n}\n\n###END of PREDICTION FUNCTION\n\n\nlibrary(shiny)\n\nshinyServer(  \n    function(input, output) { \n        output$text1<-renderText({input$slider1})\n        output$text2<-renderText({input$slider2})\n        output$text3<-renderText({input$slider3})\n        output$text4<-renderText({input$slider4})\n        output$text5<-renderText({input$slider5})\n        \n        SVal<-eventReactive(input$Submit,{\n            #isolate(c(input$slider1,input$slider2,input$slider3,input$slider4,input$slider5))\n            isolate(unlist(score(c(input$slider1,input$slider2,input$slider3,input$slider4,input$slider5)))[1])\n        }) \n        \n        \n        output$text6<-renderText({\n            #input$Submit\n            #isolate(c(input$slider1,input$slider2,input$slider3,input$slider4,input$slider5))\n            SVal()\n            \n        })\n        \n        #SValImage<-eventReactive(input$Submit,{\n            #isolate(c(input$slider1,input$slider2,input$slider3,input$slider4,input$slider5))\n         #   isolate(unlist(score(c(input$slider1,input$slider2,input$slider3,input$slider4,input$slider5)))[2])\n        #}) \n        \n        #output$image1<-renderImage({\n         #   list(src=SValImage(),contentType = 'image/png')\n        #}) \n        \n        \n        \n            \n    } \n\n) ",
+    "created" : 1463244596533.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1134915159",
+    "id" : "1F49E58F",
+    "lastKnownWriteTime" : 1463263354,
+    "last_content_update" : 1463263354793,
+    "path" : "~/R/DS/DataProducts/ScoreCustomer/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

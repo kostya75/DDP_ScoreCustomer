@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"Score Customer Application\"\nauthor: \"konstantin mingoulin\"\ndate: \"May 15, 2016\"\noutput: pdf_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n## Score Customer\n\n###PREDICTION FUNCTION\n#function to score a new customer\n\n#input tests\n#categories\n#Customer pleaser, efficient operator, growth oriented\n\n#responses\n#1 It's important to me how I'm perceived in the community\n#2 I'm always trying to understand my customers' needs\n#3 Making sure that the store is always properly stocked is important\n#4 Getting a deal from a supplier is how they get my business\n#5 I'm always looking for ways to attract new customers\n\n\n\n```{r cars}\n\n```\n\n",
+    "created" : 1463318094995.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "207324092",
+    "id" : "67DE3F85",
+    "lastKnownWriteTime" : 1463318221,
+    "last_content_update" : 1463318221784,
+    "path" : "~/R/DS/DataProducts/ScoreCustomer/readme.Rmd",
+    "project_path" : "readme.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

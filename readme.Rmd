@@ -1,0 +1,33 @@
+---
+title: "Score Customer Application"
+author: "konstantin mingoulin"
+date: "May 15, 2016"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Score Customer
+
+###PREDICTION FUNCTION
+#function to score a new customer
+
+#input tests
+#categories
+#Customer pleaser, efficient operator, growth oriented
+
+#responses
+#1 It's important to me how I'm perceived in the community
+#2 I'm always trying to understand my customers' needs
+#3 Making sure that the store is always properly stocked is important
+#4 Getting a deal from a supplier is how they get my business
+#5 I'm always looking for ways to attract new customers
+
+
+
+```{r cars}
+
+```
+

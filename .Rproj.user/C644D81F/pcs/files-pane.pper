@@ -1,0 +1,9 @@
+{
+    "path" : "~/R/DS/DataProducts/ScoreCustomer/www",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

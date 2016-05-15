@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyUI(fluidPage(\n\n  # Application title\n  titlePanel(\"Assign Type to a New Client\"),\n\n  sidebarPanel(\"Instructions: Ask your new client the questions below. Based on the responses, select values from 1 (not important) to 5 (very important) for each attribute. Click <Submit> when finished\",h1(\"\"),\n       \n             sliderInput(\"slider1\", label = \"Q1: It's important to me how I'm perceived in the community\",\n                         min = 1, max = 5, value = 3),\n             sliderInput(\"slider2\", label=\"Q2: I'm always trying to understand my customers' needs\",\n                         min = 1, max = 5, value = 3),\n             sliderInput(\"slider3\", label=\"Q3: Making sure that the store is always properly stocked is important\",\n                         min = 1, max = 5, value = 3), \n             sliderInput(\"slider4\", label=\"Q4: Getting a deal from a supplier is how they get my business\",\n                         min = 1, max = 5, value = 3), \n             sliderInput(\"slider5\", label=\"Q5: I'm always looking for ways to attract new customers\",\n                         min = 1, max = 5, value = 3), \n      actionButton(\"Submit\",\"Submit\")\n  ),\n  mainPanel(\n      #p(\"Output slider1\"),\n      #textOutput(\"text1\"),\n      #p(\"Output slider2\"),\n      #textOutput(\"text2\"),\n      #p(\"Output slider3\"),\n      #textOutput(\"text3\"),\n      #p(\"Output slider4\"),\n      #textOutput(\"text4\"),\n      #p(\"Output slider5\"),\n     \n      \n      \n      p(h3(\"Your new client is:\")), \n      h4(textOutput(\"text6\"))\n      \n  )\n)\n)\n",
+    "created" : 1463244596040.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3045083724",
+    "id" : "662F0E0",
+    "lastKnownWriteTime" : 1463263298,
+    "last_content_update" : 1463263298939,
+    "path" : "~/R/DS/DataProducts/ScoreCustomer/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
