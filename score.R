@@ -11,16 +11,18 @@
 #4 Getting a deal from a supplier is how they get my business
 #5 I'm always looking for ways to attract new customers
 
-c1<-c(5,4,3,2,1)
-c2<-c(1,2,3,4,5)
+test_customer1<-c(5,5,3,2,1)
+test_customer2<-c(1,1,3,4,5)
+test_customer3<-c(2,3,3,2,3)
+
 
 score<-function(response) {
     
     #cluster centers. The estimates below could be an output of k-means procedure
     cluster_name<-c("Customer Pleaser", "Efficient Operator", "Growth First")
-    cluster_image<-list(img(src = "CP.png"),img(src = "EO.png"),img(src = "GF.png"))
-    cluster_coord1<-c(8,4,1)
-    cluster_coord2<-c(1,4,8)
+    cluster_image<-list("CP.png","EO.png","GF.png")
+    cluster_coord1<-c(8,5,1)
+    cluster_coord2<-c(1,3,8)
     
     #linear combinations of responses used to score new observations. The estimates below
     #could be an output of linear discriminant analysis
